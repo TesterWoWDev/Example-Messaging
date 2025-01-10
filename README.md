@@ -1,4 +1,4 @@
-# CLient <-> Server Communications: Example Messaging
+# Client <-> Server Communications: Example Messaging
 
 This is a example repository for creating a fully functional client to server communcations using the ClientExtensions library.
 
