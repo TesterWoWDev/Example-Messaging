@@ -20,7 +20,7 @@ export function testing(events:TSEvents)
             pkt.write().SendToPlayer(player)
         }
     })
-    events.CustomPacketID.OnReceive(testingBasicMessageID,(opcode,packet,player)=>{
+    events.CustomPacket.OnReceive(testingBasicMessageID,(opcode,packet,player)=>{
         console.log('recieved basic')
         let customPacket = new testingBasicMessage("");
         customPacket.read(packet);

@@ -26,8 +26,8 @@ export class testingBasicMessage {
 export const testingArrayMessageID = 51;
 export class testingArrayMessage {
     size: uint32 = 0;
-    info: TSArray<float> = [];
-    constructor(size: uint32, info: TSArray<float>) {
+    info: number[] = [];
+    constructor(size: uint32, info: number[]) {
         this.size = size;
         this.info = info;
     }
@@ -35,7 +35,7 @@ export class testingArrayMessage {
         this.info.pop();
         this.size = read.ReadUInt32();
         for (let i = 0; i < this.size; i++) {
-            let data = read.ReadFloat();
+            let data = read.ReadDouble();
             this.info.push(data);
         }
     }
@@ -43,7 +43,7 @@ export class testingArrayMessage {
         let packet = CreateCustomPacket(testingArrayMessageID, 0);
         packet.WriteUInt32(this.size);
         for (let i = 0; i < this.size; i++) {
-            packet.WriteFloat(this.info[i]);
+            packet.WriteDouble(this.info[i]);
         }
         return packet;
     }
